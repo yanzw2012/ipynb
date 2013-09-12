@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Protractor in-browser Test Runner</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="iframecontainer">
+      <iframe id="testframe" style="width:75%;height:600px">
+      </iframe>
+    </div>
+  </body>
+    <script src="browserwd.js"></script>
+    <!-- other scripts, like jasmine, would go here -->
+    <script src="browserprotractor.js"></script>
+
+    <script>
+      window.julie = "The outer context";
+      var frameWin = document.getElementById('testframe').contentWindow;
+      frameWin.julie = "The application under test";
+      var driver = webdriver.browser.createDriver(frameWin);
+      driver.manage().timeouts().setScriptTimeout(100000);
+
+      protractor.setInstance(protractor.wrapDriver(driver));
+
+      var ptor = protractor.getInstance();
+
+      ptor.get('..#/form');
+
+      var greeting = ptor.findElement(protractor.By.binding('{{greeting}}'));
+
+      greeting.getText().then(function(text) {
+        if (text == 'Hiya') {
+          console.log('success');
+        } else {
+          console.log('fail');
+        }
+      });
+
+    </script>
+</html>

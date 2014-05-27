@@ -10,7 +10,10 @@
     "webdriverjs",
     "selenium"
   ],
-  "author": "Chirayu Krishnappa <chirayu@chirayuk.com>",
+  "author": [
+    "Chirayu Krishnappa <chirayu@chirayuk.com>",
+    "Julie Ralph <ju.ralph@gmail.com>"
+  ],
   "dependencies": {
     "request": "^2.36.0",
     "selenium-webdriver": "2.42.0",

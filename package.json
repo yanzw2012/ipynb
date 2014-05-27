@@ -1,7 +1,7 @@
 {
-  "name": "protractor",
-  "description": "Webdriver E2E test wrapper for Angular.",
-  "homepage": "https://github.com/angular/protractor",
+  "name": "protractor-dev",
+  "description": "Webdriver E2E test wrapper for AngularJS and AngularDart.",
+  "homepage": "https://github.com/chirayuk/protractor",
   "keywords": [
     "angular",
     "test",
@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/angular/protractor.git"
+    "url": "git://github.com/chirayuk/protractor.git"
   },
   "bin": {
     "protractor": "bin/protractor",
